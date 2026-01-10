@@ -1,21 +1,23 @@
-##Overview: This project implements a Retrieval Augmentation Generation (RAG) system, where answers are generated only from the content provided by the user. Users can upload documents and ask questions. The system retrieves the answer from the provided content and answers the question. 
+## Overview: 
 
-##Prerequisites:
+This project implements a Retrieval Augmentation Generation (RAG) system, where answers are generated only from the content provided by the user. Users can upload documents and ask questions. The system retrieves the answer from the provided content and answers the question. 
+
+## Prerequisites:
   1. Python (Streamlit UI)
   2. Node.js (backend server)
   3. Qdrant account
   4. Groq API key (LLM responses)
 
-##How to create a Qdrant account
+## How to create a Qdrant account
   1. Go to the main Qdrant page
   2. Sign up or log in
   3. Create a new cluster
   4. Note down the QDRANT_URL and QDRANT_API_KEY in .env file
   5. Create a collection in Qdrant with Vector Size = 384 and Distance = Cosine
 
-##These details are stored in .env and used in server.js
+Note: These details are stored in .env and used in server.js
 
-##How to store data in Qdrant Vector Database - relevant file is [server.js](server.js)
+## How to store data in Qdrant Vector Database - relevant file is [server.js](server.js)
   1. User uploads a file from the UI (app.py)
   2. The file is sent to the backend using
      [ app.post("/upload-file", upload.single("file"), async (req, res) ]
@@ -30,9 +32,9 @@
   7. The embeddings are stored in Qdrant using
      [ await client.upsert(COLLECTION_NAME, { points }) ]
 
-##After this data is stored in Qdrant Vector Database
+Note: After this data is stored in Qdrant Vector Database
 
-##How to answer queries from Qdrant Database - relevant file is [server.js](server.js)
+## How to answer queries from Qdrant Database - relevant file is [server.js](server.js)
   1. User asks a question from UI (app.py)
   2. The query is sent to the backend using
      [ app.post("/ask", async (req, res) ]
