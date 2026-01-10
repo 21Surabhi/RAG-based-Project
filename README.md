@@ -17,7 +17,8 @@ This project implements a Retrieval Augmentation Generation (RAG) system, where 
 
 Note: These details are stored in .env and used in server.js
 
-## How to store data in Qdrant Vector Database - relevant file is [server.js](server.js)
+## How to store data in Qdrant Vector Database 
+Refer to file [server.js](server.js)
   1. User uploads a file from the UI (app.py)
   2. The file is sent to the backend using
      [ app.post("/upload-file", upload.single("file"), async (req, res) ]
@@ -34,7 +35,8 @@ Note: These details are stored in .env and used in server.js
 
 Note: After this data is stored in Qdrant Vector Database
 
-## How to answer queries from Qdrant Database - relevant file is [server.js](server.js)
+## How to answer queries from Qdrant Database 
+Refer to file [server.js](server.js)
   1. User asks a question from UI (app.py)
   2. The query is sent to the backend using
      [ app.post("/ask", async (req, res) ]
